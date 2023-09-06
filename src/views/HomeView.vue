@@ -15,7 +15,7 @@
       </button>
     </div>
     <div class="flex justify-center items-center pt-44">
-      <!-- <img class="img1" src="../assets/logo.png" alt="" /> -->
+      <img class="img1" src="../assets/logo.png" alt="" />
     </div>
   </div>
   <div class="bg-text-gray-900 bg-teal-800 w-full h-screen" v-else>
@@ -68,7 +68,7 @@ const signup = ref(() => {
 let change = ref(false);
 setTimeout(() => {
   change.value = !change.value;
-}, 0.0);
+}, 5000);
 onUpdated(() => {
   router.replace({ name: "home" });
 });
