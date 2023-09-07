@@ -80,7 +80,7 @@ onUpdated(() => {
   box-sizing: border-box;
 }
 .planePath {
-  stroke: #D9DADA;
+  stroke: #d9dada;
   stroke-width: 0.1%;
   stroke-width: 0.5%;
   stroke-dasharray: 1% 2%;
@@ -88,16 +88,16 @@ onUpdated(() => {
   fill: none;
 }
 .fil1 {
-  fill: #D9DADA;
+  fill: #d9dada;
 }
 .fil2 {
-  fill: #C5C6C6;
+  fill: #c5c6c6;
 }
 .fil4 {
-  fill: #9D9E9E;
+  fill: #9d9e9e;
 }
 .fil3 {
-  fill: #AEAFB0;
+  fill: #aeafb0;
 }
 .img1 {
   cursor: pointer;
