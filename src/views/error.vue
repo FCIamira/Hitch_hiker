@@ -3,9 +3,10 @@
   <h1>404-PAGE NOT FOUND</h1>
   <p>
     The page you are looking for might have been removed had its name changed or
-    is temporarily unavailable.
+    is temporarily unavailable.You Can Return To Home Page.
   </p>
-  <button class="btn1" @click="error">GO TO HOME PAGE</button>
+  <button class="btn1 	" @click="error">GO TO HOME PAGE</button>
+
 </template>
 <script setup>
 import { ref } from "vue";
@@ -17,8 +18,8 @@ let error = ref(() => {
 </script>
 <style>
 h1 {
-  color: black;
-  font-size: 30px;
+  color: rgb(255, 0, 0);
+  font-size: 40px;
   text-align: center;
   margin-top: 2%;
   padding-left: 4%;
@@ -35,12 +36,14 @@ p {
 .btn1 {
   color: white;
   width: 18%;
-  background-color: blue;
+  background-color: teal;
   font-size: 26px;
   border-radius: 22px;
+  margin-left: 40%;
+  margin-top: 3%;
 }
 .btn1:hover {
-  color: rgb(191, 191, 191);
-  background-color: white;
+  color: white;
+  background-color: rgb(6, 32, 32);
 }
 </style>
