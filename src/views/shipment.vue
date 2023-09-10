@@ -1,6 +1,8 @@
 <template>
-    <div>shipment page</div>
+
+    <dashboard />
 </template>
 <script setup>
+import dashboard from '@/components/dashboard.vue';
 
 </script>

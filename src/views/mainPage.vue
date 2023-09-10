@@ -1,31 +1,28 @@
 <template>
-    <div>main page</div>
-
-    <div>header</div>
-    <div class="dashborad">
-      <router-link
-        :to="{
-          name: 'shipment',
-        }"
-        >shipment</router-link
-      >
-      <router-link
-        :to="{
-          name: 'trips',
-        }"
-        >trips</router-link
-      >
-      <router-link
-        :to="{
-          name: 'mainPage',
-        }"
-        >Home</router-link
-      >
-    </div>
-    <router-view></router-view>
-    <div>footer</div>
-  
+  <!-- #231f3a; -->
+  <dashboard />
 </template>
-<script setup>
 
+
+<script setup>
+import dashboard from '@/components/dashboard.vue';
 </script>
+
+<style>
+
+
+</style>
+
+
+
+<!-- <button @click="show = !show" v-if="!show">
+  <i class="fas fa-arrow-right"></i>
+</button>
+<button @click="show = !show" v-if="show">
+  <i class="fas fa-arrow-left"></i>
+</button>
+
+const closeModel = () => {
+  show.value = !show.value;
+};
+@closeModel="closeModel" -->

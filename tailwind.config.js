@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         "home-page": "url('src/assets/1.jpg')",
       },
+      // height: {
+      //   'h-full': '100%',
+      // },
 
      },
    },
