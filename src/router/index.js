@@ -29,8 +29,8 @@ const routes = [
       import("../views/mainPage.vue"),
   },
   {
-    path: "/AddTrips.vue",
-    name: "AddTrips.vue",
+    path: "/AddTrips",
+    name: "AddTrips",
     
     component: () =>
       import("../views/AddTrips.vue"),

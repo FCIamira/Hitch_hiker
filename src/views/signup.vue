@@ -25,10 +25,10 @@
   <button @click="login" class=" mt-5 p-4 w-10/12 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
 Sign-Up</button>
 </div>
-<div class="registerlink p-4 mx-5 ml-12 ">
+   <div class="registerlink p-4 mx-5 ml-12 ">
     <p>Alrady have an account ?! 
     <a href="./login" style="color:blue"> Login?</a></p>
-  </div>
+   </div>
   </div>
  
   
@@ -77,6 +77,4 @@ input{
   right: 29px;
   margin-top:-81px ;
 }
-
-
 </style>

@@ -17,7 +17,9 @@
     <div class="flex justify-center items-center pt-44">
       <img class="img1" src="../assets/logo.png" alt="" />
     </div>
+    
   </div>
+  
   <div class="bg-text-gray-900 bg-teal-800 w-full h-screen" v-else>
     <svg viewBox="0 0 3387 1270">
       <path
@@ -54,6 +56,8 @@
       </animateMotion>
     </svg>
   </div>
+  
+  
 </template>
 <script setup>
 import { useRouter } from "vue-router";
@@ -68,7 +72,7 @@ const signup = ref(() => {
 let change = ref(false);
 setTimeout(() => {
   change.value = !change.value;
-},5000);
+},0.0);
 onUpdated(() => {
   router.replace({ name: "home" });
 });
@@ -106,4 +110,6 @@ onUpdated(() => {
 .img1:hover {
   transform: scale(1.05);
 }
+
+
 </style>

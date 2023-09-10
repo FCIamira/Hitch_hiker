@@ -55,6 +55,7 @@
       </div>
     </form>
   </div>
+  
   <p>{{ loginError }}</p>
 </template>
 
