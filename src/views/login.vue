@@ -4,8 +4,7 @@
     <!-- <div class="bg-black h-screen w-full"> -->
     <form
       @submit.prevent="login"
-      class="bg-white mt-24 p-2 w-3/4 h-3/4 mar order-solid border-2 rounded-lg drop-shadow-2xl"
-    >
+      class="bg-white mt-24 p-2 w-3/4 h-3/4 mar order-solid border-2 rounded-lg drop-shadow-2xl">
       <div id="label1" class="pt-8 w-full text-center pb-2">
         <label for="username" class="block text-sm font-bold text-black">
         </label>

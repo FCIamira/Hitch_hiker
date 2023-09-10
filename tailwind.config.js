@@ -1,22 +1,22 @@
 module.exports = {
-
   purge: [],
 
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-   darkMode: false, // or 'media' or 'class'
-   theme: {
-     extend: {
+  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
       backgroundImage: {
         "home-page": "url('src/assets/1.jpg')",
+        "main-page": "url('src/assets/back.jpg')",
       },
+
       // height: {
       //   'h-full': '100%',
       // },
-
-     },
-   },
-   variants: {
-     extend: {},
-   },
-   plugins: [],
- }
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
