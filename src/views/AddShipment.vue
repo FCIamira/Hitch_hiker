@@ -39,7 +39,7 @@
     margin: auto;
     border: solid 2px rgba(245, 234, 234, 0.061);
     border-radius: 50px;
-    background-color: rgba(0, 0, 0, 0.524);
+    background-color: rgba(0, 0, 0, 0.712);
 
 }
 </style>
