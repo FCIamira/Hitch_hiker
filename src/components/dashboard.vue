@@ -5,41 +5,33 @@
             <span class="pl-3 text-4xl"> 𝒽𝒾𝓉𝒸𝒽𝒽𝒾𝓀𝑒𝓇 </span>
         </div>
         <router-link 
-        class="hover:bg-white hover:text-black hover:rounded-lg pl-3"
+        class="hover:bg-white hover:text-black hover:rounded-lg pl-2"
          :to="{
             name: 'mainPage',
         }">Home</router-link>
         <router-link 
-        class="hover:bg-white hover:text-black hover:rounded-lg pl-3" 
+        class="hover:bg-white hover:text-black hover:rounded-lg pl-2" 
         :to="{
             name: 'shipment',
         }">Shipment</router-link>
         <router-link 
-        class="hover:bg-white hover:text-black hover:rounded-lg pl-3"
+        class="hover:bg-white hover:text-black hover:rounded-lg pl-2"
          :to="{
             name: 'trips',
         }">Trips</router-link>
-
-
-        <router-view></router-view>
-
         <!-- <img src="../assets/profile_img.jpg" alt="profile-img" class="w-16"> -->
 
     </div>
 </template>
 
 <script setup>
-// import { defineProps } from 'vue';
-// const props = defineProps(["dashborad"]);////any variable
-// props.dashborad
-
 </script>
 
 <style lang="css">
 .dashborad {
     display: flex;
-    height: 100vh;
-    width: 200px;
+    height: 100vmax;
+    width: 320px;
     flex-direction: column;
     gap: 50px;
 
