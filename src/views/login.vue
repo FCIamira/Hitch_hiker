@@ -4,7 +4,7 @@
     <!-- <div class="bg-black h-screen w-full"> -->
     <form
       @submit.prevent="login"
-      class="bg-white mt-24 p-2 w-3/4 h-3/4 mar order-solid border-2 rounded-lg drop-shadow-2xl"
+      class="bg-white mt-24 p-2 w-3/4 h-4/6 mar order-solid border-2 rounded-lg drop-shadow-2xl"
     >
       <div id="label1" class="pt-8 w-full text-center pb-2">
         <label for="username" class="block text-sm font-bold text-black">
@@ -32,6 +32,12 @@
         <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
           Please provide a valid password .
         </p>
+        <div class="labrl3 p-4 ml-11 flex flex-row-1">
+            <label for="checkbox" class="mr-24  ">
+              <input id="checkbox" type="checkbox" class="w-4 h-4 mr-3" />Remember me</label
+            >
+            <a href="#" style="color: blue"> ForgetPassword?</a>
+        </div>
         <div class="w-full text-center pb-2">
           <button
             @click="login"
@@ -41,18 +47,14 @@
           </button>
         </div>
       </div>
-      <div class="labrl3 p-4 ml-8 flex flex-row-1">
-        <label for="checkbox" class="mr-24">
-          <input type="checkbox" class="w-4 h-4" />Remember me</label
-        >
-        <a href="#" style="color: blue"> ForgetPassword?</a>
-      </div>
-      <div class="registerlink p-4 mx-5 ml-12">
+      
+      <div class="registerlink p-4 ml-44">
         <p>
           Do not Have an account?!
           <a href="./signup" style="color: blue"> Register?</a>
         </p>
       </div>
+
     </form>
   </div>
   
