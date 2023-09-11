@@ -44,7 +44,7 @@
         <input
           type="number"
           class="p-4 w-10/12 border-2 border-slate-400 placeholder-black"
-          v-model="lastname"
+          v-model="phoneNumber"
           placeholder="Phone Number"
         />
       </div>
@@ -93,8 +93,15 @@
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 
-let username = ref("");
+let firstname = ref("");
+let lastname = ref("");
+let email = ref("");
+let phoneNumber = ref("");
 let password = ref("");
+let errormsg = ref("errrrrror");
+
+
+
 // let UsernameValid = ref(true);
 // let PasswordValid = ref(true);
 let loginError = ref("");
@@ -103,10 +110,18 @@ let router = useRouter();
 
 const login = () => {
   if (
-    username.value === "your_username" &&
-    password.value === "your_password"
+    firstname.value  &&
+    lastname.value  &&
+    password.value &&
+     email.value &&
+    phoneNumber.value
+
+
   ) {
-    router.push({ name: "mainPage" });
+    router.push({ name: "home" });
+  }
+   else {
+    alert(errormsg.value)
   }
 };
 

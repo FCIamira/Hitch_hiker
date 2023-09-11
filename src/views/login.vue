@@ -26,7 +26,7 @@
         <input
           v-model="password"
           placeholder="Enter your password"
-          type="password"
+          type="password" min="8"
           class="w-10/12 border-2 border-slate-400 placeholder-black"
         />
         <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
@@ -65,6 +65,8 @@ import { ref } from "vue";
 
 let username = ref("");
 let password = ref("");
+let errormsg = ref("errrrrror");
+
 // let UsernameValid = ref(true);
 // let PasswordValid = ref(true);
 let loginError = ref("");
@@ -73,10 +75,13 @@ let router = useRouter();
 
 const login = () => {
   if (
-    username.value === "h" &&
-    password.value === "1"
+    username.value  &&
+    password.value 
   ) {
     router.push({ name: "home" });
+  }
+    else {
+    alert(errormsg.value)
   }
 };
 
