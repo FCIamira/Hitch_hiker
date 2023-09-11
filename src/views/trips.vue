@@ -1,8 +1,2 @@
-<template>
-
-    <dashboard />
-</template>
-<script setup>
-import dashboard from '@/components/dashboard.vue';
-
-</script>
+<template>trips</template>
+<script setup></script>

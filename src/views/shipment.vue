@@ -1,7 +1,2 @@
-<template>
-
-    <dashboard />
-</template>
-<script setup>
-import dashboard from '@/components/dashboard.vue';
-</script>
+<template>shipment</template>
+<script setup></script>
