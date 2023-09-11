@@ -1,7 +1,12 @@
 <template>
 <div class="contanier bg-main-page flex justify-center items-center bg-cover h-screen w-full bg-center">
     <div class="sub-contanier drop-shadow-2xl ">
-       <div class="flex justify-around pt-20 ">
+              
+      <div class="flex justify-around pt-10 ">
+        <p class="text-4xl text-white font-light ">Add Shipment</p>
+        
+       </div>
+       <div class="flex justify-around pt-10 ">
          <input type="text" placeholder="From (City,Country)" class=" w-2/5 p-6 text-l h-10 border-2  border-slate-400  rounded-lg  bg-gray-100">
         <input type="text" placeholder="To (City,Country)" class="    w-2/5 p-6 text-l h-10 border-2 border-slate-400  rounded-lg  bg-gray-100">
        </div>
@@ -19,7 +24,7 @@
         
        
         <div class="flex justify-around pt-20 ">
-         <button class=" w-2/5  text-l h-16 rounded-lg  bg-teal-400 hover:bg-teal   -500 text-xl">Add Shipment</button>
+         <button class=" w-2/5  text-l h-16 rounded-lg  bg-teal-400 hover:bg-teal-500 text-xl">Add Shipment</button>
        </div>
 
        
