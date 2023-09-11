@@ -1,5 +1,5 @@
 <template>
-  <div class="dashborad p-2 text-white drop-shadow-2xl text-lg bg-black">
+  <div class="dashborad p-2 text-white drop-shadow-2xl text-lg bg-teal-500">
     <div>
       <span class="pl-3 text-4xl"> 𝒽𝒾𝓉𝒸𝒽𝒽𝒾𝓀𝑒𝓇 </span>
     </div>

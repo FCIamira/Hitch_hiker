@@ -75,7 +75,7 @@ setTimeout(() => {
   change.value = !change.value;
 },0.0);
 onUpdated(() => {
-  router.replace({ name: "home" });
+  router.replace({ name: "welcomePage" });
 });
 </script>
 <style scoped>
