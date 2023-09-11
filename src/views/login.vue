@@ -73,10 +73,10 @@ let router = useRouter();
 
 const login = () => {
   if (
-    username.value === "your_username" &&
-    password.value === "your_password"
+    username.value === "h" &&
+    password.value === "1"
   ) {
-    router.push({ name: "mainPage" });
+    router.push({ name: "home" });
   }
 };
 

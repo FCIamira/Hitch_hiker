@@ -20,12 +20,12 @@ const routes = [
     component: () => import("../views/signup.vue"),
   },
   {
-    path: "/layout",
+    path: "/",
     name: "layout",
     component: () => import("../views/layout.vue"),
     children: [
       {
-        path: "",
+        path: "/",
         name: "home",
 
         component: () => import("../views/home.vue"),
