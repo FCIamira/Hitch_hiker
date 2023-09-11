@@ -14,7 +14,7 @@
       <p class="text-3xl flex justify-center text-teal-500 font-bold">
         SIGN-UP
       </p>
-      <div id="label1" class="pt-8 w-full text-center pb-2">
+      <div id="label1" class="pt-8 w-full text-center ">
         <label
           for="username"
           class="block text-sm font-bold text-black"
@@ -34,13 +34,22 @@
           v-model="lastname"
           placeholder="Last Name"
         />
+        
         <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
           Please provide a valid .
         </p>
-        <div class="w-12"></div>
       </div>
 
-      <div id="label2" class="pt-8 w-full text-center pb-2">
+      <div id="label2" class=" w-full text-center pb-2">
+        <input
+          type="number"
+          class="p-4 w-10/12 border-2 border-slate-400 placeholder-black"
+          v-model="lastname"
+          placeholder="Phone Number"
+        />
+      </div>
+
+      <div id="label3" class="pt-5 w-full text-center pb-2">
         <!-- <label for="password" class="block text-sm font-bold text-black">password</label> -->
         <input
           v-model="email"

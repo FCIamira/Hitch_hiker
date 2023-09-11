@@ -1,6 +1,7 @@
 <template>
-  <div v-if="change" class="bg-home-page bg-cover h-screen w-full bg-center">
-    <div class="pt-24 pr-8 flex space-x-11 justify-end">
+  <div v-if="change" class="bg-home-page bg-cover h-screen w-full bg-center bg-fixed relative">
+    
+    <div class="pt-24 pr-8 flex space-x-11 justify-end ">
       <button
         class="bg-teal-500 hover:bg-teal-700 text-white font-semibold w-48 h-12 rounded text-2xl"
         @click="login"
@@ -72,7 +73,7 @@ const signup = ref(() => {
 let change = ref(false);
 setTimeout(() => {
   change.value = !change.value;
-},0.0);
+},5000);
 onUpdated(() => {
   router.replace({ name: "home" });
 });
