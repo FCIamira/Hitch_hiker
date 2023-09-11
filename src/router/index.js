@@ -20,8 +20,8 @@ const routes = [
     component: () => import("../views/signup.vue"),
   },
   {
-    path: "/mainPage",
-    name: "mainPage",
+    path: "/layout",
+    name: "layout",
     component: () => import("../views/layout.vue"),
     children: [
       {
