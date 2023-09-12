@@ -93,7 +93,7 @@ let onSubmit=ref(()=> {
 Field {
 width: 350px;
 height: 50px;
-padding: 21px;
+padding: 2px;
 }
 .w-12 {
 position: absolute;
