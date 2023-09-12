@@ -1,6 +1,6 @@
 <template>
   <!-- #231f3a; -->
-  <div class="display">
+  <div class="display h-[100vh]">
     <dashboard />
 
     <router-view></router-view>
