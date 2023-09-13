@@ -1,7 +1,7 @@
 <template>
   <div class="contanier h-auto w-full bg-center bg-gray-100">
     <div class="flex justify-around pt-10">
-      <p class="text-4xl text-gray-800 font-bold ">Add Shipment</p>
+      <p class="flex justify-around  mx-auto text-4xl font-bold">Add Shipment</p>
     </div>
     <div
       class="sub-contanier h-auto md:p-4 p-2 gap-4 w-full flex md:flex-row flex-col flex-wrap drop-shadow-2xl"
@@ -9,7 +9,7 @@
       <input
         type="text"
         placeholder="From (City,Country)"
-        class="text-lg md:w-[48%] w-full my-2 h-14 p-4 placeholder:text-black border-2 border-slate-400 rounded-lg bg-gray-100"
+        class="text-lg5ef558c6a486 md:w-[48%] w-full my-2 h-14 p-4 placeholder:text-black border-2 border-slate-400 rounded-lg bg-gray-100"
       />
       <input
         type="text"

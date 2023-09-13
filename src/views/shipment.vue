@@ -1,5 +1,5 @@
 <template>
-<button class="w-40 h-16 bg-blue-700 text-white rounded-xl flex justify-center pt-5  ml-auto  mt-20 mr-10 ">Add AddShipment </button>
+<button class="w-20 h-20 bg-green-500 text-white   ml-auto  mt-20 mr-10 rounded-full	 text-4xl hover:bg-green-600  " @click="$router.push({ name: 'AddShipment' })"> + </button>
 </template>
 <script setup>
 
