@@ -1,7 +1,9 @@
 <template>
-  <div v-if="change" class="bg-home-page bg-cover h-screen w-full bg-center bg-fixed relative">
-    
-    <div class="pt-24 pr-8 flex space-x-11 justify-end ">
+  <div
+    v-if="change"
+    class="bg-home-page bg-cover h-screen w-full bg-center bg-fixed relative"
+  >
+    <div class="pt-24 pr-8 flex space-x-11 justify-end">
       <button
         class="bg-teal-500 hover:bg-teal-700 text-white font-semibold w-48 h-12 rounded text-2xl"
         @click="login"
@@ -18,9 +20,8 @@
     <div class="flex justify-center items-center pt-44">
       <img class="img1" src="../assets/logo.png" alt="" />
     </div>
-    
   </div>
-  
+
   <div class="bg-text-gray-900 bg-teal-800 w-full h-screen" v-else>
     <svg viewBox="0 0 3387 1270">
       <path
@@ -57,8 +58,6 @@
       </animateMotion>
     </svg>
   </div>
-  
-  
 </template>
 <script setup>
 import { useRouter } from "vue-router";
@@ -67,13 +66,14 @@ let router = useRouter();
 const login = ref(() => {
   router.push({ name: "login" });
 });
+
 const signup = ref(() => {
   router.push({ name: "signup" });
 });
 let change = ref(false);
 setTimeout(() => {
   change.value = !change.value;
-},5000);
+}, 5000);
 onUpdated(() => {
   router.replace({ name: "welcomePage" });
 });
@@ -111,6 +111,4 @@ onUpdated(() => {
 .img1:hover {
   transform: scale(1.05);
 }
-
-
 </style>
