@@ -73,13 +73,24 @@ const routes = [
         component: () => import("../views/tripInfo.vue"),
       },
     ],
+    
+
   },
+              {
+        path: "/ForgetPassword",
+        name: "ForgetPassword",
+
+        component: () => import("../views/ForgetPassword.vue"),
+      },
+
   {
     path: "/:pathMatch(.*)*",
     name: "error",
     component: () => import("../views/error.vue"),
   },
+  
 ];
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
