@@ -1,8 +1,8 @@
 <template>
   <div>
-    <filterFrom @search="search" />
+    <filterFrom @search="search" @type="typeCard" />
     <div class="home-content">
-      <div class="trips">
+      <div v-if="selected" class="trips">
         <Card
           class="bg-blue-800"
           v-for="trip in trips"
@@ -11,7 +11,8 @@
           @click="router.push({ name: 'tripInfo', params: { id: trip.id } })"
         />
       </div>
-      <div class="shipments">
+      <div v-else class="shipments">
+        shipments
         <Card v-for="shipment in shipments" :key="shipment.index" />
       </div>
     </div>
@@ -23,6 +24,8 @@ import { useRouter } from "vue-router";
 import Card from "@/components/Card.vue";
 import filterFrom from "@/components/filterFrom.vue";
 const router = useRouter();
+const selected = ref(true);
+
 const trips = ref([
   {
     id: 1,
@@ -41,5 +44,12 @@ console.log(show);
 // });
 const search = (data) => {
   console.log(data);
+};
+const typeCard = (value) => {
+  if (value === "trips") {
+    selected.value = true;
+  } else {
+    selected.value = false;
+  }
 };
 </script>

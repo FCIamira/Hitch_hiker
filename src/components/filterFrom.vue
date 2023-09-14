@@ -38,7 +38,7 @@
       </div>
       <div class="flex gap-96 items-center p-10 text-xl">
         <ul class="flex items-center md:flex-cols-2">
-          <li>
+          <li @click="selectData('trips')">
             <input
               type="radio"
               id="trips"
@@ -65,7 +65,7 @@
               </svg>
             </label>
           </li>
-          <li>
+          <li @click="selectData('shipments')">
             <input
               type="radio"
               id="Shipment"
@@ -107,15 +107,14 @@
 </template>
 <script setup>
 import { defineEmits, ref } from "vue";
-// const type = ref(true);
 const data = ref({
   to: "",
 });
-const emits = defineEmits(["search"]);
+const emits = defineEmits(["search", "type"]);
 const search = () => {
   emits("search", data.value);
 };
-// const change = () => {
-//   type.value = false;
-// };
+let selectData = (value) => {
+  emits("type", value);
+};
 </script>
