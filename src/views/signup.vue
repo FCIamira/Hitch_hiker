@@ -8,8 +8,7 @@ class="backg grid items-center md:grid-cols-2 grid-cols-1 grid-flow-col gap-4"
 
 <!-- <div class="bg-black h-screen w-full"> -->
 <Form
-:validation-schema="schema" @submit="onSubmit"
-@submit.prevent="login"
+:validation-schema="schema" @submit="goToHome"
 class="bg-white   p-2 w-3/4 h-4/4 md:m-0 mx-auto order-solid border-2 rounded-lg drop-shadow-2xl"
 >
 <div id="label3" class="pt-5 w-full text-center pb-2">
@@ -95,7 +94,6 @@ Alrady have an account ?!
 <a href="./login" style="color: blue"> Login?</a>
 </ErrorMessage>
 </div>
-<!-- </div> -->
 <div class="registerlink p-4 mx-5 ml-12">
           <p>
             Alrady have an account ?!
@@ -104,30 +102,36 @@ Alrady have an account ?!
         </div>
 </Form>
 </div>
-<p>{{ loginError }}</p>
 </template>
 
 <script setup>
-// import { useRouter } from "vue-router";
-import { ref } from "vue";
+import { useRouter } from "vue-router";
+// import { ref } from "vue";
 import { Form, Field ,ErrorMessage} from 'vee-validate';
 import * as yup from 'yup';
 
+let router =useRouter();
 const schema = yup.object({
-firstname:yup.string().required(),
-lastname:yup.string().required(),
-email: yup.string().email().required(),
-phoneNumber:yup.string().required(),
-password: yup.string().required().min(8),
-confirm_password:yup.string()
+firstname:yup.string().required().label("text"),
+lastname:yup.string().required().label("text"),
+email: yup.string().email().required().label("email"),
+phoneNumber:yup.string().required().label("number"),
+password: yup.string().required().min(8).label("password")
+    .oneOf([yup.ref('password'), null]).matches(/[a-z]/, "please add lowecase" )
+    .oneOf([yup.ref('password'), null]).matches(/[A-Z]/, "please add appercase" ),
+confirm_password:yup.string().label("password")
     .required()
     .min(8)
+     .oneOf([yup.ref('password'), null]).matches(/[a-z]/, "please add lowecase" )
+    .oneOf([yup.ref('password'), null]).matches(/[A-Z]/, "please add appercase" )
     .oneOf([yup.ref('password'), null], 'Passwords must match'), // Ensure password and confirm_password match
 });
 
-let onSubmit=ref((values)=> {
-alert(JSON.stringify(values, null, 2));
-})
+const goToHome = () => {
+    router.push({
+      name: "home"
+    });
+  };
 
 </script>
 <style>
