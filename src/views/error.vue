@@ -13,7 +13,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 let router = useRouter();
 let error = ref(() => {
-  router.push({ name: "home" });
+  router.push({ name: "welcomePage" });
 });
 </script>
 <style>

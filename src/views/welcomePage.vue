@@ -1,15 +1,17 @@
 <template>
-  <div v-if="change" class="bg-home-page bg-cover h-screen w-full bg-center bg-fixed relative">
-    
-    <div class="pt-24 pr-8 flex space-x-11 justify-end ">
+  <div
+    v-if="change"
+    class="bg-home-page bg-cover min-h-[100vh] w-full bg-fixed relative"
+  >
+    <div class="pt-24 pr-8 flex space-x-11 justify-end">
       <button
-        class="bg-teal-500 hover:bg-teal-700 text-white font-semibold w-48 h-12 rounded text-2xl"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-semibold w-48 h-12 rounded text-2xl"
         @click="login"
       >
         Login
       </button>
       <button
-        class="bg-teal-500 hover:bg-teal-700 text-white font-semibold w-48 h-12 rounded text-2xl"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-semibold w-48 h-12 rounded text-2xl"
         @click="signup"
       >
         Signup
@@ -18,10 +20,47 @@
     <div class="flex justify-center items-center pt-44">
       <img class="img1" src="../assets/logo.png" alt="" />
     </div>
-    
+    <div class="sub-welcome bg-cover w-full bg-fixed relative">
+      <div
+        data-aos="fade-down-right"
+        class="bg-gray-100 m-4 md:m-40 w-10/12 md:w-4/12 h-2/5 border-2 rounded-2xl shadow-2xl p-6"
+      >
+        <div class="text-4xl font-bold mx-48 text-blue-500">HitchHiker</div>
+        <p class="text-gray-600 mt-10 text-2xl">
+          HitchHiker is a social network that connects Shoppers with Travelers.
+          Shoppers can buy all their needs from all around the world and ship
+          with a Traveler already heading their way. Shoppers save money
+          shipping. Travelers make money traveling.
+        </p>
+      </div>
+      <div
+        data-aos="fade-up-left"
+        class="bg-gray-100 m-4 md:m-40 md:ml-auto w-10/12 md:w-4/12 h-2/6 border-2 rounded-2xl shadow-2xl p-6"
+      >
+        <div class="text-4xl font-bold mx-48 text-blue-500">Availability</div>
+        <p class="text-gray-600 mt-10 text-2xl">
+          Can't find your favorite brand, product, size or color in your city?
+          Shop from all over the world and ship with HitchHiker to your city.
+          Save Money Shipping.
+        </p>
+      </div>
+      <div
+        data-aos="fade-up-right"
+        class="bg-gray-100 m-4 md:m-40  w-10/12 md:w-4/12 h-2/6 border-2 rounded-2xl shadow-2xl p-6"
+      >
+        <div class="text-4xl font-bold mx-40 text-blue-500">Earn Money</div>
+        <p class="text-gray-600 mt-10 text-2xl">
+        You can easily earn up to $800 from a single trip and even more by
+        helping shoppers get their needs and carrying their items to where you
+        are already heading. Your luggage space can make you money.</p>
+      </div>
+    </div>
+    <div class="sub2-welcome bg-cover h-screen w-full bg-fixed relative">
+      <div class=""></div>
+    </div>
   </div>
-  
-  <div class="bg-text-gray-900 bg-teal-800 w-full h-screen" v-else>
+
+  <div class="bg-text-gray-200 bg-blue-500 w-full h-screen" v-else>
     <svg viewBox="0 0 3387 1270">
       <path
         id="planePath"
@@ -57,9 +96,8 @@
       </animateMotion>
     </svg>
   </div>
-  
-  
 </template>
+
 <script setup>
 import { useRouter } from "vue-router";
 import { onUpdated, ref } from "vue";
@@ -73,7 +111,7 @@ const signup = ref(() => {
 let change = ref(false);
 setTimeout(() => {
   change.value = !change.value;
-},5000);
+}, 0.0);
 onUpdated(() => {
   router.replace({ name: "welcomePage" });
 });
@@ -111,6 +149,4 @@ onUpdated(() => {
 .img1:hover {
   transform: scale(1.05);
 }
-
-
 </style>
