@@ -76,7 +76,7 @@ const routes = [
     
 
   },
-              {
+       {
         path: "/ForgetPassword",
         name: "ForgetPassword",
 

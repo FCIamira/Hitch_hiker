@@ -1,7 +1,7 @@
 <template>
   <!-- #231f3a; -->
-  <div class="display h-[100vh]">
-    <dashboard />
+  <div class="display ">
+    <dashboard  class="min-h-full"/>
 
     <router-view></router-view>
   </div>
@@ -15,13 +15,6 @@ import dashboard from "@/components/dashboard.vue";
   display: grid;
   grid-template-columns: auto 1fr;
 }
-/* .p{
-  background-color: blue;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  padding: 100px;
-} */
 </style>
 
 <!-- <button @click="show = !show" v-if="!show">

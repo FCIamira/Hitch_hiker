@@ -6,7 +6,7 @@
       <div class="flex">
         <label class="sr-only">From</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
+          class=" placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="From (country,City)"
           type="text"
           name="from"
@@ -14,7 +14,7 @@
         />
         <label class="sr-only">To</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
+          class="placeholder:italic placeholder:text-slate-400 block bg-white w-5/6  border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="To (country,City)"
           type="text"
           name="to"
@@ -23,14 +23,14 @@
       <div class="flex mt-10">
         <label class="sr-only">all appointments</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white w-3/4 border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
+          class="placeholder:italic placeholder:text-slate-400 block bg-white lg:w-3/4 w-full border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="all appointments"
           type="date"
           name="all appointments"
         />
         <label class="sr-only">weight</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white w-3/4 border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l"
+          class="placeholder:italic placeholder:text-slate-400 block bg-white lg:w-3/4 w-full border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l"
           placeholder="weight..."
           type="number"
           name="weight"
@@ -96,7 +96,7 @@
         >
           <button
             type="submit"
-            class="bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 focus:ring-blue-400 focus:ring-opacity-75 w-40 h-10"
+            class="bg-blue-500 text-white font-bold  rounded-lg shadow-lg hover:bg-blue-700 focus:ring-blue-400 focus:ring-opacity-75 w-44 h-12"
           >
             Search
           </button>
