@@ -1,14 +1,4 @@
 <template>
-  <div>
-    <ul>
-      <!-- <li v-for="dataa in data" :key="dataa.address"> -->
-      {{
-        data
-      }}
-
-      <!-- </li> -->
-    </ul>
-  </div>
   <div
     class="backg grid items-center md:grid-cols-2 grid-cols-1 grid-flow-col gap-4"
   >
@@ -17,7 +7,7 @@
     </div>
     <Form
       :validation-schema="schema"
-      @submit="goToHome"
+      @submit="login"
       class="bg-white p-2 w-3/4 h-4/4 md:m-0 mx-auto order-solid border-2 rounded-lg drop-shadow-2xl"
     >
       <div id="label3" class="pt-5 w-full text-center pb-2">
@@ -62,7 +52,7 @@
         <button
           class="mt-5 p-4 w-10/12 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
           v-if="schema"
-          @click="requestData"
+          @click.prevent="login"
         >
           login
         </button>
@@ -82,16 +72,11 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import { onMounted } from "vue";
 import axios from "axios";
 
-onMounted(() => {
-  loadData();
-});
 const router = useRouter();
 const password = ref("");
 let firstname = ref("");
-let data = ref([]);
 const schema = yup.object().shape({
   firstname: yup
     .string()
@@ -114,54 +99,55 @@ const goToHome = () => {
     name: "home",
   });
 };
-const loadData = () => {
-  axios({
-    method: "get",
-    url: "https://1890-156-209-8-159.ngrok-free.app/api/customers/",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-      "ngrok-skip-browser-warning": "any",
-    },
-  })
-    .then((response) => {
-      data.value = response.data;
-      loading.value = false;
-      console.log(response.data);
+
+let login = () => {
+  axios
+    .post(
+      "https://a392-156-209-80-134.ngrok-free.app/user/login/",
+      {
+        username: firstname.value,
+        password: password.value,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "any",
+        },
+      }
+    )
+    .then((res) => {
+      console.log(res.status);
+      console.log(res);
+      goToHome();
     })
     .catch((error) => {
-      console.error("Error:", error);
-      loading.value = false;
+      alert(`${error} ya et4awy`);
     });
 };
-let loading = ref([]);
-//   const ForgetPassword = (()=>{
-//   router.push({name:"ForgetPassword"})
-// })
 
-const requestData = {
-  firstname: firstname.value,
-  password: password.value,
-};
-axios
-  .post(
-    "https://1890-156-209-8-159.ngrok-free.app/api/customers/",
-    requestData,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  )
-  .then((response) => {
-    // Handle the successful response here, e.g., redirect to home page
-    console.log("POST Response:", response.data);
-    router.push({ name: "home" }); // Redirect to the home page
-  })
-  .catch((error) => {
-    // Handle errors here, e.g., display an error message
-    console.error("POST Error:", error);
-  });
+// // const requestData = {
+//   firstname: firstname.value,
+//   password: password.value,
+// // };
+// axios
+//   .post(
+//     "https://1890-156-209-8-159.ngrok-free.app/api/customers/",
+//     requestData,
+//     {
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     }
+//   )
+//   .then((response) => {
+//     // Handle the successful response here, e.g., redirect to home page
+//     console.log("POST Response:", response.data);
+//     router.push({ name: "home" }); // Redirect to the home page
+//   })
+//   .catch((error) => {
+//     // Handle errors here, e.g., display an error message
+//     console.error("POST Error:", error);
+//   });
 </script>
 
 <style>

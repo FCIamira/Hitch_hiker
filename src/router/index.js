@@ -43,6 +43,12 @@ const routes = [
         component: () => import("../views/AddShipment.vue"),
       },
       {
+        path: "add-shipmen/:id",
+        name: "addshipment",
+
+        component: () => import("../views/AddShipmentInTrips.vue"),
+      },
+      {
         path: "pofile",
         name: "pofile",
 
@@ -73,24 +79,20 @@ const routes = [
         component: () => import("../views/tripInfo.vue"),
       },
     ],
-    
-
   },
-       {
-        path: "/ForgetPassword",
-        name: "ForgetPassword",
+  {
+    path: "/ForgetPassword",
+    name: "ForgetPassword",
 
-        component: () => import("../views/ForgetPassword.vue"),
-      },
+    component: () => import("../views/ForgetPassword.vue"),
+  },
 
   {
     path: "/:pathMatch(.*)*",
     name: "error",
     component: () => import("../views/error.vue"),
   },
-  
 ];
-
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

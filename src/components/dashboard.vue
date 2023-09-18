@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dashborad p-4 min-h-screen h-full md:w-[320px] w-[58px] text-white drop-shadow-2xl text-lg bg-gray-900"
+    class="dashborad space-y-12 p-4 h-screen min-h-[100vh] md:w-[320px] w-[58px] text-white drop-shadow-2xl text-lg bg-gray-900"
   >
     <div class="flex gap-2 w-full items-center pt-4">
       <svg
@@ -16,9 +16,9 @@
       </svg>
       <span class="pl-1 text-4xl md:block hidden"> HitchHiker </span>
     </div>
-    <div>
-      <hr />
-    </div>
+
+    <hr />
+
     <div
       class="flex gap-2 w-full items-center"
       :class="{
@@ -46,7 +46,6 @@
       </svg>
       <button class="text-2xl md:block hidden">Home</button>
     </div>
-
     <div
       class="flex gap-2 w-full items-center"
       :class="{
@@ -208,20 +207,4 @@
 
 <script setup></script>
 
-<style lang="css">
-.dashborad {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  gap: 50px;
-}
-
-/* router-link{
-    font-size: larger;
-
-}
-router-link{
-    font-size: larger;
-    
-} */
-</style>
+<style lang="css"></style>

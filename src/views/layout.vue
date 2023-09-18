@@ -1,7 +1,7 @@
 <template>
   <!-- #231f3a; -->
   <div class="display ">
-    <dashboard  class="min-h-full"/>
+    <dashboard  class="h-[100%] min-h-screen"/>
 
     <router-view></router-view>
   </div>

@@ -5,11 +5,9 @@
     <div class="md:block hidden">
       <img src="../assets/signup-img.png" />
     </div>
-
-    <!-- <div class="bg-black h-screen w-full"> -->
     <Form
       :validation-schema="schema"
-      @submit="goToHome"
+      @submit="signUp"
       class="bg-white p-2 w-3/4 h-4/4 md:m-0 mx-auto order-solid border-2 rounded-lg drop-shadow-2xl"
     >
       <div id="label3" class="pt-5 w-full text-center pb-2">
@@ -20,6 +18,16 @@
           for="username"
           class="block text-sm font-bold text-black"
         ></label>
+        <Field
+          type="text"
+          name="username"
+          class="p-4 m-2 w-10/12 border-2 border-slate-400 rounded-lg placeholder-slate-600"
+          v-model="username"
+          placeholder="Enter your username"
+        />
+        <ErrorMessage name="username" class="text-red-600 block">
+        </ErrorMessage>
+
         <Field
           type="text"
           name="firstname"
@@ -39,7 +47,7 @@
         <ErrorMessage name="lastname" class="text-red-600 block">
         </ErrorMessage>
         <Field
-          type="number"
+          type="text"
           name="phoneNumber"
           class="p-4 m-2 w-10/12 border-2 border-slate-400 rounded-lg placeholder-slate-600"
           v-model="phoneNumber"
@@ -76,7 +84,8 @@
       </div>
       <div class="w-full text-center pb-2">
         <button
-          @click="login"
+          @click.prevent="signUp"
+          v-if="schema"
           class="mt-5 p-4 w-10/12 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
         >
           Sign-Up
@@ -100,12 +109,21 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-// import { ref } from "vue";
+import { ref } from "vue";
 import { Form, Field, ErrorMessage } from "vee-validate";
+// useForm
+import axios from "axios";
 import * as yup from "yup";
 
+const firstname = ref("");
+let lastname = ref("");
+const email = ref("");
+let phoneNumber = ref("");
+let password = ref("");
+let username = ref("");
 let router = useRouter();
 const schema = yup.object({
+  username: yup.string().required().label("text"),
   firstname: yup.string().required().label("text"),
   lastname: yup.string().required().label("text"),
   email: yup.string().email().required().label("email"),
@@ -120,7 +138,7 @@ const schema = yup.object({
     .matches(/[@ $  % & * ^ %]/, "please enter valid password")
     .matches(/[a-z]/, "Please Enter valid password")
     .oneOf([yup.ref("password"), null])
-    
+
     .matches(/[A-Z]/, "Please enter valid password"),
   confirm_password: yup
     .string()
@@ -129,12 +147,45 @@ const schema = yup.object({
     .oneOf([yup.ref("password"), null])
     .oneOf([yup.ref("password"), null], "Passwords must match"), // Ensure password and confirm_password match
 });
-
+// const { handleSubmit } = useForm({
+//   validationSchema: schema,
+// });
 const goToHome = () => {
   router.push({
     name: "home",
   });
 };
+let signUp = () => {
+  axios
+    .post(
+      "https://a392-156-209-80-134.ngrok-free.app/user/api/register/",
+      {
+        first_name: firstname.value,
+        last_name: lastname.value,
+        email: email.value,
+        phone_number: phoneNumber.value,
+        password: password.value,
+        username: username.value
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "any",
+        },
+      }
+    )
+    .then((res) => {
+      console.log(res.status);
+      console.log(res);
+      goToHome();
+    })
+    .catch((error) => {
+      alert(`${error} ya et4awy`);
+    });
+};
+// const signUp = handleSubmit(() => {
+//   console.log(router);
+// });
 </script>
 <style>
 Field {

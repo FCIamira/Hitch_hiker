@@ -21,7 +21,7 @@
     <div class="flex justify-center items-center pt-44">
       <img class="img1" src="../assets/logo.png" alt="" />
     </div>
-    <div class="sub-welcome bg-cover w-full bg-fixed relative">
+    <div class="sub-welcome bg-cover w-full bg-fixed relative  lg:gap-xl-12 gap-x-6 md:grid-cols-1 xl:grid-cols-2">
       <div
         data-aos="fade-down-right"
         class="bg-gray-100 m-4 md:m-40 w-10/12 md:w-4/12 h-2/5 border-2 rounded-2xl shadow-2xl p-6"
@@ -59,17 +59,76 @@
         <p > Team Member</p>
         
       </div>
-     <div class="flex">
+
+<div  data-aos="flip-left"
+class="container my-24 mx-auto md:px-6">
+  <section class="mb-32 text-center">
+  
+    <div class="lg:gap-xl-12 grid gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+      <div class="mb-12">
+        <img  src="../assets/hesham2.jpeg"
+          class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28" />
+
+        <p class="mb-2 font-bold">Hesham Abdelnasser</p>
+        <p class="text-neutral-500 dark:text-neutral-300">Front-End Developer</p>
+      </div>
+
+      <div class="mb-12">
+        <img src="../assets/amira.jpg"
+          class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28" />
+
+        <p class="mb-2 font-bold">Amira Hashem</p>
+        <p class="text-neutral-500 dark:text-neutral-300">Front-End Developer</p>
+      </div>
+
+     
+     
+
+      
+      <div class="mb-12">
+        <img src="../assets/ahmed.jpeg"
+          class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28" />
+        <p class="mb-2 font-bold">Ahmed Tarek</p>
+        <p class="text-neutral-500 dark:text-neutral-300">Back-End Developer</p>
+      </div>
+
+     
+
+     
+
+     
+
+      <div class="mb-12">
+        <img src="../assets/david.jpeg"
+          class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28" />
+        <p class="mb-2 font-bold">David Ayman</p>
+        <p class="text-neutral-500 dark:text-neutral-300">
+         Back-End Developer
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <img src="../assets/mon.jpeg"
+          class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28" />
+        <p class="mb-2 font-bold">Mahmoud Ayman</p>
+        <p class="text-neutral-500 dark:text-neutral-300">Back-End Developer</p>
+      </div>
+
+       
+    </div>
+  </section>
+</div>
+     <!-- <div class="flex">
           
            
           <div
                   data-aos="fade-left"
-                  class="bg-gray-100 m-4 md:m-40 md:ml-auto w-10/12 md:w-4/12 h-2/6 border-2 rounded-2xl shadow-2xl p-6"
+                  class="bg-gray-100  m-40  ml-auto w-4/12  rounded-3xl shadow-2xl p-6"
                 >
-                  <div class="text-4xl font-bold mx-48 text-blue-500">Hesham </div>
-                  <div class="text-4xl font-bold mx-40 text-blue-500">Abdelnasser </div>
+                  <div class="text-2xl font-bold mx-50 pl-32 text-blue-500">Hesham Abdelnasser  </div>
+                  <div class="text-4xl font-bold mx-40 text-blue-500"></div>
 
-                  <img class=" mt-10 ml-44 w-44 h-44" src="../assets/hesham2.jpeg" alt="">
+                  <img class=" mt-10 ml-44 w-44 h-44  rounded-3xl" src="../assets/hesham2.jpeg" alt="">
                   <p class="text-xl ml-44">Front end developer </p>
                 </div>
                 <div
@@ -111,25 +170,20 @@
                   data-aos="fade-right"
                   class="bg-gray-100  md:m-40 w-10/12 md:w-4/12 h-2/6 border-2 rounded-2xl shadow-2xl p-6"
                 >
-                  <div class="text-4xl font-bold mx-36 text-blue-500">Mahmoud mon</div>
+                  <div class="text-4xl font-bold mx-36 text-blue-500">Mahmoud Ayman</div>
                   <img class=" mt-10 ml-44 w-44 h-44" src="../assets/mon.jpeg" alt="">
                   <p class="text-xl ml-44">Back end developer </p>
                 </div>
-       </div>
+       </div> -->
             
-     
-       
-    <div class="sub2-welcome bg-cover h-screen w-full bg-fixed relative">
-      <div class=""></div>
-    </div>
  <footer class="bg-white dark:bg-gray-900">
 
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" class="flex items-center">
+              <a href="#" class="flex items-center">
                   <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">HitchHiker</span>
               </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -291,7 +345,6 @@
 </footer>
    </div>
 </div>
-
 
   <div class="bg-text-gray-200 bg-blue-500 w-full h-screen" v-else>
     <svg viewBox="0 0 3387 1270">

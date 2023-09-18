@@ -1,44 +1,56 @@
 <template>
   <div
-    class="filtter bg-white drop-shadow-2xl w-full mr-6 mt-5 rounded-lg h-96"
+    class="filtter md:p-6 p-2 h-auto bg-white drop-shadow-2xl w-full mr-6 mt-5 rounded-lg"
   >
-    <form class="form w-full" @submit.prevent="search">
-      <div class="flex">
+    <form
+      class="form w-full grid lg:grid-cols-2 grid-cols-1 md:gap-4 gap-2"
+      @submit.prevent="search"
+    >
+      <div class="input-field">
         <label class="sr-only">From</label>
         <input
-          class=" placeholder:italic placeholder:text-slate-400 block bg-white w-5/6 border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
+          class="placeholder:italic placeholder:text-slate-400 block w-full bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="From (country,City)"
           type="text"
           name="from"
           v-model="data.to"
         />
+      </div>
+      <div class="input-field">
         <label class="sr-only">To</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white w-5/6  border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
+          class="placeholder:italic placeholder:text-slate-400 block w-full bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="To (country,City)"
           type="text"
           name="to"
         />
       </div>
-      <div class="flex mt-10">
+      <div class="input-field">
         <label class="sr-only">all appointments</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white lg:w-3/4 w-full border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
+          class="placeholder:italic placeholder:text-slate-400 block w-full bg-white border border-slate-300 rounded-md shadow-sm focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="all appointments"
           type="date"
           name="all appointments"
         />
+      </div>
+      <div class="input-field">
         <label class="sr-only">weight</label>
         <input
-          class="placeholder:italic placeholder:text-slate-400 block bg-white lg:w-3/4 w-full border border-slate-300 rounded-md p-2 mx-10 mb-2 shadow-sm focus:outline-none focus:ring-sky-500 focus:ring-1 sm:text-l"
+          class="placeholder:italic placeholder:text-slate-400 block w-full bg-white border border-slate-300 rounded-md shadow-sm focus:ring-sky-500 focus:ring-1 sm:text-l h-16"
           placeholder="weight..."
           type="number"
           name="weight"
         />
       </div>
-      <div class="flex gap-96 items-center p-10 text-xl">
-        <ul class="flex items-center md:flex-cols-2">
-          <li @click="selectData('trips')">
+
+      <div
+        class="grid lg:grid-cols-3 grid-cols-1 lg:col-start-1 lg:col-end-3 col-start-1 col-end-2 items-center md:text-xl text-sm"
+      >
+        <ul
+          class="items-center grid lg:grid-cols-2 grid-cols-1 lg:col-start-1 lg:col-end-3 col-start-1 col-end-2"
+        >
+          <li @click="selectData('trip')">
             <input
               type="radio"
               id="trips"
@@ -49,7 +61,7 @@
             />
             <label
               for="trips"
-              class="inline-flex items-center justify-between w-96 p-5 text-gray-700 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+              class="inline-flex items-center w-full justify-between p-5 text-gray-700 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <div class="w-full">Trips</div>
               <svg
@@ -65,7 +77,7 @@
               </svg>
             </label>
           </li>
-          <li @click="selectData('shipments')">
+          <li @click="selectData('shipment')">
             <input
               type="radio"
               id="Shipment"
@@ -75,7 +87,7 @@
             />
             <label
               for="Shipment"
-              class="inline-flex items-center justify-between w-96 p-5 ml-2 text-gray-700 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+              class="inline-flex items-center w-full justify-between p-5 ml-2 text-gray-700 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <div class="w-full">Shipment</div>
               <svg
@@ -91,16 +103,12 @@
             </label>
           </li>
         </ul>
-        <div
-          class="flex px-10 pt-2 flex-col-2 w-full items-baseline justify-between"
+        <button
+          class="lg:col-start-3 lg:col-end-4 col-start-1 col-end-2 w-9 h-10 bd-blue-500 ml-40"
+          type="submit"
         >
-          <button
-            type="submit"
-            class="bg-blue-500 text-white font-bold  rounded-lg shadow-lg hover:bg-blue-700 focus:ring-blue-400 focus:ring-opacity-75 w-44 h-12"
-          >
-            Search
-          </button>
-        </div>
+          Search
+        </button>
       </div>
     </form>
   </div>
