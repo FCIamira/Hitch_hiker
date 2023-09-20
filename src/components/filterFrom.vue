@@ -13,7 +13,7 @@
           placeholder="From (country,City)"
           type="text"
           name="from"
-          v-model="data.to"
+          v-model="data.from"
         />
       </div>
       <div class="input-field">
@@ -23,6 +23,7 @@
           placeholder="To (country,City)"
           type="text"
           name="to"
+          v-model="data.to"
         />
       </div>
       <div class="input-field">
@@ -32,6 +33,7 @@
           placeholder="all appointments"
           type="date"
           name="all appointments"
+          v-model="data.date"
         />
       </div>
       <div class="input-field">
@@ -41,6 +43,7 @@
           placeholder="weight..."
           type="number"
           name="weight"
+          v-model="data.itemWeight"
         />
       </div>
 
@@ -104,7 +107,7 @@
           </li>
         </ul>
         <button
-          class="lg:col-start-3 lg:col-end-4 col-start-1 col-end-2 w-9 h-10 bd-blue-500 ml-40"
+          class="block   lg:col-start-3 lg:col-end-4 col-start-1 col-end-2 w-9 h-10 bd-blue-500 ml-40"
           type="submit"
         >
           Search
@@ -114,15 +117,53 @@
   </div>
 </template>
 <script setup>
-import { defineEmits, ref } from "vue";
+import { defineEmits, ref, defineProps } from "vue";
+import axios from "axios";
+import { useStore } from "vuex";
+const store = useStore();
 const data = ref({
   to: "",
+  from: "",
+  itemWeight: "",
+  date: "",
 });
+const props = defineProps(["data"]);
+console.log(props);
 const emits = defineEmits(["search", "type"]);
 const search = () => {
   emits("search", data.value);
+
+  axios
+    .post(
+      "https://85fc-156-209-7-118.ngrok-free.app/shipment/", ////rong link////////////////////////////////
+      {
+        //////////////////check for data/////////////////////////////////////////////////////////////////////
+        location_from: data.value.from,
+        location_to: data.value.to,
+        weight_available: data.value.itemWeight,
+        date: data.value.date,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${store.state.token}`,
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "any",
+        },
+      }
+    )
+    .then((res) => {
+      console.log(res.status);
+      console.log(res);
+    })
+    .catch((error) => {
+      alert(`${error} ya et4awy`);
+    });
 };
 let selectData = (value) => {
   emits("type", value);
 };
+
+// let addItem= () => {
+
+// };
 </script>

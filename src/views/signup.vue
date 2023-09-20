@@ -158,7 +158,7 @@ const goToHome = () => {
 let signUp = () => {
   axios
     .post(
-      "https://a392-156-209-80-134.ngrok-free.app/user/api/register/",
+      "https://6658-156-209-7-118.ngrok-free.app/user/api/register/",
       {
         first_name: firstname.value,
         last_name: lastname.value,

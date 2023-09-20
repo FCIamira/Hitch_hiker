@@ -75,6 +75,8 @@ import * as yup from "yup";
 import axios from "axios";
 
 const router = useRouter();
+import { useStore } from "vuex";
+const store = useStore();
 const password = ref("");
 let firstname = ref("");
 const schema = yup.object().shape({
@@ -103,7 +105,7 @@ const goToHome = () => {
 let login = () => {
   axios
     .post(
-      "https://a392-156-209-80-134.ngrok-free.app/user/login/",
+      "https://857d-105-35-78-149.ngrok-free.app/login/",
       {
         username: firstname.value,
         password: password.value,
@@ -117,7 +119,9 @@ let login = () => {
     )
     .then((res) => {
       console.log(res.status);
-      console.log(res);
+      console.log(store);
+      store.commit("setToken", res.data.access);
+      console.log(store.state.token);
       goToHome();
     })
     .catch((error) => {

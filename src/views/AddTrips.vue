@@ -1,8 +1,9 @@
 <template>
   <div>
+    <!-- addTrips -->
     <Form
       :validation-schema="schema"
-      @submit="submitForm"
+      @submit="addTrips"
       class="container h-auto w-full bg-center bg-gray-100"
     >
       <div class="flex justify-around pt-10">
@@ -53,10 +54,12 @@
         </div>
         <textarea
           type="text"
+          v-model="formData.notes"
           placeholder="Trip note"
           class="text-xl md:w-[96%] resize-none my-2 p-4 placeholder:text-black border-2 border-slate-400 rounded-lg bg-gray-100"
         />
         <button
+          type="submit"
           class="h-16 w-[98%] rounded-lg bg-gray-800 hover:bg-gray-500 text-3xl text-white"
           v-if="schema"
         >
@@ -69,16 +72,20 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
 import * as yup from "yup";
-
-const router = useRouter();
-
+import { useStore } from "vuex";
+const store = useStore();
+// console.log(store.state.token);
+import axios from "axios";
+// const router = useRouter();
 const formData = ref({
   from: "",
   to: "",
   itemWeight: null,
   date: null,
+  price: 0,
+  notes: "",
 });
 
 const schema = yup.object().shape({
@@ -88,10 +95,48 @@ const schema = yup.object().shape({
   date: yup.date().required("Date is required").label("date"),
 });
 
-const submitForm = () => {
-  router.push({
-    name: "trips",
-  });
+// const submitForm = () => {
+//   router.push({
+//     name: "trips",
+//   });
+// };
+
+const addTrips = () => {
+  axios
+    .post(
+      "https://857d-105-35-78-149.ngrok-free.app/trip/",
+      {
+        location_from: formData.value.from,
+        location_to: formData.value.to,
+        weight_available: formData.value.itemWeight,
+        date: formData.value.date,
+        price: 25,
+        notes: formData.value.notes,
+        rate: 5,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${store.state.token}`,
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "any",
+        },
+      }
+      // {
+      //   headers: {
+      //     "Access-Control-Allow-Headers": "*",
+      //     "Content-Type": "application/json",
+      //     "ngrok-skip-browser-warning": "any",
+      //     access: `Bearer ${store.state.token}`,
+      //   },
+      // }
+    )
+    .then((res) => {
+      console.log(res.status);
+      console.log(res);
+    })
+    .catch((error) => {
+      alert(`${error} ya et4awy`);
+    });
 };
 </script>
 <style scoped>

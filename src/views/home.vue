@@ -1,8 +1,8 @@
 <template>
   <div>
-    <filterFrom @search="search" @type="typeCard" />
+    <filterFrom @search="search" :data="data" @type="typeCard" />
     <div class="home-content">
-      <div v-if="selected" class="trips grid grid-cols-3">
+      <div v-if="selected" class="trips grid lg:grid-cols-3 grid-cols-2">
         <Card
           class="bg-blue-800"
           v-for="trip in trips"
@@ -11,7 +11,7 @@
           @click="router.push({ name: 'tripInfo', params: { id: trip.id } })"
         />
       </div>
-      <div v-else class="shipments grid grid-cols-3">
+      <div v-else class="shipments grid lg:grid-cols-3 grid-cols-2">
         <Card
           v-for="shipment in shipments"
           :data="shipment"
@@ -32,7 +32,6 @@ import axios from "axios";
 import filterFrom from "@/components/filterFrom.vue";
 const router = useRouter();
 const selected = ref(true);
-
 const trips = ref([
   {
     From: "cairo",
@@ -120,19 +119,25 @@ const typeCard = (value) => {
   if (value === "trip") {
     selected.value = true;
     axios
-      .get(`https://0032-156-209-80-134.ngrok-free.app/${selected.value}/`, {
-        headers: {
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "any",
-        },
-      })
+      .get(
+        `https://6385-105-35-78-149.ngrok-free.app/trip/${selected.value}/`,
+        {
+          /////////////////////////////////
+          headers: {
+            "Content-Type": "application/json",
+            "ngrok-skip-browser-warning": "any",
+          },
+        }
+      )
       .then((res) => {
         console.log(res.data);
+        trips.value = res.data;
       });
   } else {
     selected.value = false;
     axios
-      .get(`https://0032-156-209-80-134.ngrok-free.app/${selected.value}/`, {
+      .get(`https://6385-105-35-78-149.ngrok-free.app/${selected.value}/`, {
+        ////////////////////////////////////////
         headers: {
           "Content-Type": "application/json",
           "ngrok-skip-browser-warning": "any",
@@ -140,6 +145,7 @@ const typeCard = (value) => {
       })
       .then((res) => {
         console.log(res.data);
+        shipments.value = res.data;
       });
   }
 };
