@@ -81,7 +81,7 @@
 
             <div class="mb-12">
               <img
-                src="../assets/Amira Hashem.jpeg"
+                src="../assets/amira.jpeg"
                 class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28"
               />
 
