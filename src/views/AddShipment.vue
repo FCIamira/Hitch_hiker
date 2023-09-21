@@ -2,6 +2,7 @@
   <div>
     <Form
       :validation-schema="schema"
+      @submit="goToShipment"
       class="container h-auto w-full bg-center bg-gray-100"
     >
       <div class="flex justify-around pt-10">
@@ -86,7 +87,6 @@
         <button
           class="h-16 w-[98%] rounded-lg bg-gray-800 hover:bg-gray-500 text-3xl text-white"
           v-if="schema"
-          @click.prevent="addShipment"
         >
           Add Shipment
         </button>
@@ -99,11 +99,11 @@ import { Form, Field, ErrorMessage } from "vee-validate";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import * as yup from "yup";
-import axios from "axios";
-import { useStore } from "vuex";
-const store = useStore();
+// import axios from "axios";
+// import { useStore } from "vuex";
+// const store = useStore();
 const router = useRouter();
-console.log(store.state.token);
+// console.log(store.state.token);
 let from = ref("");
 let to = ref("");
 let itemWeight = ref("");
@@ -127,39 +127,39 @@ const schema = yup.object().shape({
 // });
 const goToShipment = () => {
   router.push({
-    name: "shipment",
+    name: "shipment"
   });
 };
-let addShipment = () => {
-  axios
-    .post(
-      "https://857d-105-35-78-149.ngrok-free.app/shipment/",
-      {
-        from_location: from.value,
-        to_location: to.value,
-        name_shipment: name.value,
-        before_date: date.value,
-        item_name: name.value,
-        item_weight: itemWeight.value,
-        single_item_price: price.value,
-        item_link: link.value,
-        rate: 5,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${store.state.token}`,
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "any",
-        },
-      }
-    )
-    .then((res) => {
-      console.log(res.status);
-      console.log(res);
-      goToShipment();
-    })
-    .catch((error) => {
-      alert(`${error} ya et4awy`);
-    });
-};
+// let addShipment = () => {
+//   axios
+//     .post(
+//       "https://857d-105-35-78-149.ngrok-free.app/shipment/",
+//       {
+//         from_location: from.value,
+//         to_location: to.value,
+//         name_shipment: name.value,
+//         before_date: date.value,
+//         item_name: name.value,
+//         item_weight: itemWeight.value,
+//         single_item_price: price.value,
+//         item_link: link.value,
+//         rate: 5,
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${store.state.token}`,
+//           "Content-Type": "application/json",
+//           "ngrok-skip-browser-warning": "any",
+//         },
+//       }
+//     )
+//     .then((res) => {
+//       console.log(res.status);
+//       console.log(res);
+//       goToShipment();
+//     })
+//     .catch((error) => {
+//       alert(`${error} ya et4awy`);
+//     });
+// };
 </script>

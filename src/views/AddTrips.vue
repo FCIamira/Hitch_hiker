@@ -3,7 +3,7 @@
     <!-- addTrips -->
     <Form
       :validation-schema="schema"
-      @submit="addTrips"
+      @submit="goToTrips"
       class="container h-auto w-full bg-center bg-gray-100"
     >
       <div class="flex justify-around pt-10">
@@ -72,13 +72,13 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { ref } from "vue";
-// import { useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import * as yup from "yup";
-import { useStore } from "vuex";
-const store = useStore();
+// import { useStore } from "vuex";
+// const store = useStore();
 // console.log(store.state.token);
-import axios from "axios";
-// const router = useRouter();
+// import axios from "axios";
+const router = useRouter();
 const formData = ref({
   from: "",
   to: "",
@@ -95,49 +95,49 @@ const schema = yup.object().shape({
   date: yup.date().required("Date is required").label("date"),
 });
 
-// const submitForm = () => {
-//   router.push({
-//     name: "trips",
-//   });
-// };
-
-const addTrips = () => {
-  axios
-    .post(
-      "https://857d-105-35-78-149.ngrok-free.app/trip/",
-      {
-        location_from: formData.value.from,
-        location_to: formData.value.to,
-        weight_available: formData.value.itemWeight,
-        date: formData.value.date,
-        price: 25,
-        notes: formData.value.notes,
-        rate: 5,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${store.state.token}`,
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "any",
-        },
-      }
-      // {
-      //   headers: {
-      //     "Access-Control-Allow-Headers": "*",
-      //     "Content-Type": "application/json",
-      //     "ngrok-skip-browser-warning": "any",
-      //     access: `Bearer ${store.state.token}`,
-      //   },
-      // }
-    )
-    .then((res) => {
-      console.log(res.status);
-      console.log(res);
-    })
-    .catch((error) => {
-      alert(`${error} ya et4awy`);
-    });
+const goToTrips = () => {
+  router.push({
+    name: "trips",
+  });
 };
+
+// const addTrips = () => {
+//   axios
+//     .post(
+//       "https://857d-105-35-78-149.ngrok-free.app/trip/",
+//       {
+//         location_from: formData.value.from,
+//         location_to: formData.value.to,
+//         weight_available: formData.value.itemWeight,
+//         date: formData.value.date,
+//         price: 25,
+//         notes: formData.value.notes,
+//         rate: 5,
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${store.state.token}`,
+//           "Content-Type": "application/json",
+//           "ngrok-skip-browser-warning": "any",
+//         },
+//       }
+//       // {
+//       //   headers: {
+//       //     "Access-Control-Allow-Headers": "*",
+//       //     "Content-Type": "application/json",
+//       //     "ngrok-skip-browser-warning": "any",
+//       //     access: `Bearer ${store.state.token}`,
+//       //   },
+//       // }
+//     )
+//     .then((res) => {
+//       console.log(res.status);
+//       console.log(res);
+//     })
+//     .catch((error) => {
+//       alert(`${error} ya et4awy`);
+//     });
+// };
 </script>
 <style scoped>
 .sub-contanier {

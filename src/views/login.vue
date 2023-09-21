@@ -7,7 +7,7 @@
     </div>
     <Form
       :validation-schema="schema"
-      @submit="login"
+      @submit="goToHome"
       class="bg-white p-2 w-3/4 h-4/4 md:m-0 mx-auto order-solid border-2 rounded-lg drop-shadow-2xl"
     >
       <div id="label3" class="pt-5 w-full text-center pb-2">
@@ -52,7 +52,6 @@
         <button
           class="mt-5 p-4 w-10/12 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
           v-if="schema"
-          @click.prevent="login"
         >
           login
         </button>
@@ -72,11 +71,11 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import axios from "axios";
+// import axios from "axios";
 
 const router = useRouter();
-import { useStore } from "vuex";
-const store = useStore();
+// import { useStore } from "vuex";
+// const store = useStore();
 const password = ref("");
 let firstname = ref("");
 const schema = yup.object().shape({
@@ -93,7 +92,7 @@ const schema = yup.object().shape({
     .oneOf([yup.ref("password"), null])
     .matches(/[A-Z]/, " please enter valid password")
     .oneOf([yup.ref("password"), null])
-    .matches(/[$ ^ * !  @ %]/, " please enter valid password")
+    .matches(/[$ ^ * !  @ % ]/, " please enter valid password")
     .label("Password"),
 });
 const goToHome = () => {
@@ -101,57 +100,32 @@ const goToHome = () => {
     name: "home",
   });
 };
-
-let login = () => {
-  axios
-    .post(
-      "https://857d-105-35-78-149.ngrok-free.app/login/",
-      {
-        username: firstname.value,
-        password: password.value,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "any",
-        },
-      }
-    )
-    .then((res) => {
-      console.log(res.status);
-      console.log(store);
-      store.commit("setToken", res.data.access);
-      console.log(store.state.token);
-      goToHome();
-    })
-    .catch((error) => {
-      alert(`${error} ya et4awy`);
-    });
-};
-
-// // const requestData = {
-//   firstname: firstname.value,
-//   password: password.value,
-// // };
-// axios
-//   .post(
-//     "https://1890-156-209-8-159.ngrok-free.app/api/customers/",
-//     requestData,
-//     {
-//       headers: {
-//         "Content-Type": "application/json",
+// let login = () => {
+//   axios
+//     .post(
+//       "https://857d-105-35-78-149.ngrok-free.app/login/",
+//       {
+//         username: firstname.value,
+//         password: password.value,
 //       },
-//     }
-//   )
-//   .then((response) => {
-//     // Handle the successful response here, e.g., redirect to home page
-//     console.log("POST Response:", response.data);
-//     router.push({ name: "home" }); // Redirect to the home page
-//   })
-//   .catch((error) => {
-//     // Handle errors here, e.g., display an error message
-//     console.error("POST Error:", error);
-//   });
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           "ngrok-skip-browser-warning": "any",
+//         },
+//       }
+//     )
+//     .then((res) => {
+//       console.log(res.status);
+//       console.log(store);
+//       store.commit("setToken", res.data.access);
+//       console.log(store.state.token);
+//       goToHome();
+//     })
+//     .catch((error) => {
+//       alert(`${error} ya et4awy`);
+//     });
+// };
 </script>
 
 <style>
