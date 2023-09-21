@@ -145,7 +145,7 @@
                 >
                   <div class="text-4xl font-bold mx-36 text-blue-500 ">Amira Hashem</div>
 
-                  <img class=" mt-10 ml-44 w-44 h-44" src="../assets/amira.jpg" alt="">
+                  <img class=" mt-10 ml-44 w-44 h-44" src="../assets/Amira Hashem.jpg" alt="">
                   <p class="text-xl ml-44 ">Front end developer </p>
                   
                 </div>
@@ -492,3 +492,4 @@ onUpdated(() => {
   transform: scale(1.05);
 }
 </style>
+img
