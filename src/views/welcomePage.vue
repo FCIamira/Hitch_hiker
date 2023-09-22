@@ -453,7 +453,7 @@ const signup = ref(() => {
 let change = ref(false);
 setTimeout(() => {
   change.value = !change.value;
-}, 0.0);
+}, 5000);
 onUpdated(() => {
   router.replace({ name: "welcomePage" });
 });
