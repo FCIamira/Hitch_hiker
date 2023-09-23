@@ -78,7 +78,7 @@
                 Front-End Developer
               </p>
             </div>
-
+            
             <div class="mb-12">
               <img
                 src="../assets/amira.jpeg"

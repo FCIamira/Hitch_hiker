@@ -1,1 +1,0 @@
-<template>shipment info</template>
