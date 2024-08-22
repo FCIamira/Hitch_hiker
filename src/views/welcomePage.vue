@@ -57,17 +57,17 @@
           are already heading. Your luggage space can make you money.
         </p>
       </div>
-      <div
+      <!-- <div
         data-aos="flip-up"
         class="text-4xl flex justify-center text-blue-900"
       >
         <p>Team Member</p>
-      </div>
+      </div> -->
 
-      <div data-aos="flip-left" class="container my-24 mx-auto md:px-6">
-        <section class="mb-32 text-center">
+      <!-- <div data-aos="flip-left" class="container my-24 mx-auto md:px-6">
+        < !-- <section class="mb-32 text-center">
           <div class="lg:gap-xl-12 grid gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-            <div class="mb-12">
+            < !-- <div class="mb-12">
               <img
                 src="../assets/hesham2.jpeg"
                 class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28"
@@ -77,9 +77,9 @@
               <p class="text-neutral-500 dark:text-neutral-300">
                 Front-End Developer
               </p>
-            </div>
+            </div> -->
             
-            <div class="mb-12">
+            <!-- <div class="mb-12">
               <img
                 src="../assets/amira.jpeg"
                 class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28"
@@ -100,9 +100,9 @@
               <p class="text-neutral-500 dark:text-neutral-300">
                 Back-End Developer
               </p>
-            </div>
+            </div> -->
 
-            <div class="mb-12">
+            <!-- <div class="mb-12">
               <img
                 src="../assets/david.jpeg"
                 class="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20 h-28 w-28"
@@ -124,8 +124,8 @@
               </p>
             </div>
           </div>
-        </section>
-      </div>
+        </section>  
+      </div> -->
       <!-- <div class="flex">
           
            
@@ -492,4 +492,3 @@ onUpdated(() => {
   transform: scale(1.05);
 }
 </style>
-amira
